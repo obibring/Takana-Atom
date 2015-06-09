@@ -1,0 +1,33 @@
+{
+  "name": "takana-atom",
+  "main": "./lib/takana-atom",
+  "version": "0.0.0",
+  "description": "Takana integration for the Atom text editor.",
+  "keywords": [],
+  "activationCommands": {},
+  "repository": "https://github.com/obibring/Takana-Atom",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "author": "Orr Bibring <netbkb@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/obibring/Takana-Atom/issues"
+  },
+  "keywords": [
+    "atom",
+    "takana"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obibring/Takana-Atom"
+  },
+  "scripts": {
+   "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/obibring/Takana-Atom",
+  "dependencies": {
+    "nssocket": "^0.5.3",
+    "underscore": "^1.8.3"
+  }
+}

@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Takana-Atom'
+      'submenu': [
+        {
+          'label': 'Reconnect To Takana Server'
+          'command': 'takana-atom:reconnect'
+        },
+        {
+          'label': 'End connection to Takana Server'
+          'command': 'takana-atom:stop'
+        }
+      ]
+    ]
+  }
+]
