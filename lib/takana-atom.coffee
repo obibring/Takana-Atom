@@ -3,7 +3,6 @@ path = require 'path'
 nssocket = require 'nssocket'
 {debounce} = require 'underscore'
 
-PORT = 48627
 SUPPORTED_FILE_TYPES = [
   '.sass'
   '.scss'
@@ -70,7 +69,7 @@ TakanaAtom =
     reload = (editor) ->
       ->
         filepath = editor.getPath()
-        log "publishing buffer:reset message for #{filepath}"
+        log "publishing editor:reset message for #{filepath}"
         socket.send ['editor', 'reset'],
           path: filepath
           created_at: now()
@@ -78,7 +77,7 @@ TakanaAtom =
     update = (editor) ->
       ->
         filepath = editor.getPath()
-        log "publishing buffer:update message for #{filepath}"
+        log "publishing editor:update message for #{filepath}"
         socket.send ['editor', 'update'],
           path: filepath
           buffer: editor.getText()
@@ -106,10 +105,6 @@ TakanaAtom =
         error """Unable to connect to Takana Server. Verify that it is running
         on port #{getPort()} and try again. You can try re-connecting using
         Packages > Takana-Atom > Reconnect To Takana Server."""
-
-    #
-    # Register command that toggles this view
-    #@subscriptions.add atom.commands.add 'atom-workspace', 'takana-atom:toggle': => @toggle()
 
   activate: (state) ->
     atom.commands.add 'atom-workspace', 'takana-atom:reconnect': TakanaAtom.reconnect
